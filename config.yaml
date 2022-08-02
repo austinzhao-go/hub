@@ -44,11 +44,11 @@ catalogs:
 
 scopes:
   - name: agent:create
-    users: [vinamra28, piyush-garg, pratap0007, puneetpunamiya, sm43, sthaha, vdemeester]
+    users: [vinamra28, piyush-garg, pratap0007, puneetpunamiya, sm43, sthaha, vdemeester, austinzhao-go]
   - name: catalog:refresh
-    users: [vinamra28, piyush-garg, pratap0007, puneetpunamiya, sm43, sthaha, vdemeester]
+    users: [vinamra28, piyush-garg, pratap0007, puneetpunamiya, sm43, sthaha, vdemeester, austinzhao-go]
   - name: config:refresh
-    users: [vinamra28, piyush-garg, pratap0007, puneetpunamiya, sm43, sthaha, vdemeester]
+    users: [vinamra28, piyush-garg, pratap0007, puneetpunamiya, sm43, sthaha, vdemeester, austinzhao-go]
 
 default:
   scopes:
