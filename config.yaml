@@ -41,6 +41,13 @@ catalogs:
     provider: github
     url: https://github.com/tektoncd/catalog
     revision: main
+  - name: gcb
+    org: google
+    type: verified
+    provider: github
+    url: https://source.cloud.google.com/gcb-catalog-experiment/catalog
+    sshUrl: ssh://austinzhao@google.com@source.developers.google.com:2022/p/gcb-catalog-experiment/r/catalog
+    revision: main
 
 scopes:
   - name: agent:create
