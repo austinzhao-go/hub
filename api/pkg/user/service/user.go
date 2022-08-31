@@ -78,12 +78,13 @@ func (s *UserService) Info(res http.ResponseWriter, req *http.Request) {
 		provider:      provider,
 	}
 
-	userId, err := strconv.Atoi(id)
+	fltUserId, err := strconv.ParseFloat(id, 64)
 	if err != nil {
 		r.log.Error(err)
 		http.Error(res, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	userId := int(fltUserId)
 
 	gitUser, err := r.GitUser(userId)
 	if err != nil {
@@ -121,13 +122,14 @@ func (s *UserService) RefreshAccessToken(res http.ResponseWriter, req *http.Requ
 		provider:      provider,
 	}
 
-	userId, err := strconv.Atoi(id)
+	fltUserId, err := strconv.ParseFloat(id, 64)
 	if err != nil {
 		r.log.Error(err)
 		http.Error(res, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
+	userId := int(fltUserId)
 	refreshToken := req.Header.Get("Authorization")
 	user, err := s.validateRefreshToken(userId, refreshToken)
 	if err != nil {
@@ -193,13 +195,14 @@ func (s *UserService) NewRefreshToken(res http.ResponseWriter, req *http.Request
 		provider:      provider,
 	}
 
-	userId, err := strconv.Atoi(id)
+	fltUserId, err := strconv.ParseFloat(id, 64)
 	if err != nil {
 		r.log.Error(err)
 		http.Error(res, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
+	userId := int(fltUserId)
 	refreshToken := req.Header.Get("Authorization")
 	user, err := s.validateRefreshToken(userId, refreshToken)
 	if err != nil {

@@ -40,6 +40,7 @@ require (
 )
 
 require (
+	cloud.google.com/go/compute v1.6.1 // indirect
 	contrib.go.opencensus.io/exporter/ocagent v0.7.1-0.20200907061046-05415f1de66d // indirect
 	contrib.go.opencensus.io/exporter/prometheus v0.4.0 // indirect
 	github.com/PuerkitoBio/purell v1.1.1 // indirect

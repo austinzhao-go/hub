@@ -217,6 +217,10 @@ func List(res http.ResponseWriter, req *http.Request) {
 		providerList = append(providerList, authApp.Provider{Name: "gitlab"})
 	}
 
+	if os.Getenv("GG_CLIENT_ID") != "" && os.Getenv("GG_CLIENT_SECRET") != "" {
+		providerList = append(providerList, authApp.Provider{Name: "google"})
+	}
+
 	providers := authApp.ProviderList{
 		Data: providerList,
 	}
