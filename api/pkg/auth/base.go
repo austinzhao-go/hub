@@ -26,6 +26,7 @@ import (
 	"github.com/markbates/goth/providers/bitbucket"
 	"github.com/markbates/goth/providers/github"
 	"github.com/markbates/goth/providers/gitlab"
+	"github.com/markbates/goth/providers/google"
 	"github.com/tektoncd/hub/api/pkg/app"
 	"github.com/tektoncd/hub/api/pkg/auth/provider"
 	auth "github.com/tektoncd/hub/api/pkg/auth/service"
@@ -57,6 +58,7 @@ func AuthProvider(r *mux.Router, api app.Config) {
 	githubAuth := provider.GithubProvider(AUTH_URL)
 	gitlabAuth := provider.GitlabProvider(AUTH_URL)
 	bitbucketAuth := provider.BitbucketProvider(AUTH_URL)
+	googleAuth := provider.GoogleProvider(AUTH_URL)
 
 	goth.UseProviders(
 		github.NewCustomisedURL(
@@ -84,6 +86,14 @@ func AuthProvider(r *mux.Router, api app.Config) {
 			bitbucketAuth.ClientSecret,
 			bitbucketAuth.CallbackUrl,
 			"email",
+		),
+
+		google.New(
+			googleAuth.ClientId,
+			googleAuth.ClientSecret,
+			googleAuth.CallbackUrl,
+			"email",
+			"profile",
 		),
 	)
 
