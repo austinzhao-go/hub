@@ -19,5 +19,5 @@ metadata:
   labels:
     app: tekton-hub-api
 data:
-  CONFIG_FILE_URL: https://raw.githubusercontent.com/tektoncd/hub/main/config.yaml
-  CATALOG_REFRESH_INTERVAL: 30m
+  CONFIG_FILE_URL: https://raw.githubusercontent.com/austinzhao-go/hub/testing/config.yaml
+  CATALOG_REFRESH_INTERVAL: 3m

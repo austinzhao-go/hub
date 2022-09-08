@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: tekton-hub-ui
-          image: quay.io/tekton-hub/ui
+          image: docker.io/austinzhao1119/tekton-hub-ui:latest
           resources:
             requests:
               cpu: 100m

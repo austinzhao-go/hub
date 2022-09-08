@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: tekton-hub-db-migration
-          image: quay.io/tekton-hub/db-migration
+          image: docker.io/austinzhao1119/tekton-hub-db:latest
           env:
             - name: POSTGRES_HOST
               valueFrom:

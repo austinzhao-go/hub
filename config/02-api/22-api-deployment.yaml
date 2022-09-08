@@ -40,7 +40,7 @@ spec:
         fsGroup: 101
       containers:
         - name: tekton-hub-api
-          image: quay.io/tekton-hub/api
+          image: docker.io/austinzhao1119/tekton-hub-api:latest
           resources:
             requests:
               cpu: 100m

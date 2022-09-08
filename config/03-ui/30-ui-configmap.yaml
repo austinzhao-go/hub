@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: tekton-hub-ui
 data:
-  API_URL: 'https://api.hub.tekton.dev'
-  API_VERSION: ''
+  API_URL: 'http://tekton-hub-api:8000'
+  API_VERSION: 'v1'
   AUTH_BASE_URL: ''
   REDIRECT_URI: ''
