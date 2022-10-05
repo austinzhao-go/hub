@@ -130,6 +130,20 @@ func buildBodyTypes(api *expr.APIExpr) (map[string]map[string]*EndpointBodies, m
 		}
 		bodies[s.Name()] = sbodies
 	}
+	for _, t := range expr.Root.Types {
+		_, ok := t.Attribute().Meta["type:generate:force"]
+		if !ok {
+			continue
+		}
+		sf.schemafy(&expr.AttributeExpr{Type: t})
+	}
+	for _, t := range expr.Root.ResultTypes {
+		_, ok := t.Attribute().Meta["type:generate:force"]
+		if !ok {
+			continue
+		}
+		sf.schemafy(&expr.AttributeExpr{Type: t})
+	}
 	return bodies, sf.schemas
 }
 
